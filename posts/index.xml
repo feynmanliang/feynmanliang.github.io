@@ -1,33 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Feynman Liang</title>
-    <link>https://feynmanliang.com/</link>
-    <description>Recent content on Feynman Liang</description>
+    <title>Posts on Feynman Liang</title>
+    <link>https://feynmanliang.com/posts/</link>
+    <description>Recent content in Posts on Feynman Liang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Feb 2018 12:04:08 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2013 00:29:39 +0100</lastBuildDate>
     
-        <atom:link href="https://feynmanliang.com/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://feynmanliang.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>https://feynmanliang.com/about/</link>
-      <pubDate>Tue, 13 Feb 2018 12:04:08 -0800</pubDate>
-      
-      <guid>https://feynmanliang.com/about/</guid>
-      <description>&lt;p&gt;&lt;img style=&#34;width: 200px&#34; src=&#34;headshot.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I am a second year statistics PhD student at UC Berkeley.&lt;/p&gt;
-
-&lt;p&gt;I also work on web applications and devops automation
-in my free time.&lt;/p&gt;
-
-&lt;p&gt;You can find me on &lt;a href=&#34;https://github.com/feynmanliang&#34;&gt;Github&lt;/a&gt;
-and &lt;a href=&#34;https://linkedin.com/in/feynman&#34;&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>MathJax and Syntax Highlighting (with Live Preview) on Ghost</title>
