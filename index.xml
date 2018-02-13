@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Feynman Liang</title>
+    <link>https://feynmanliang.com/</link>
+    <description>Recent content on Feynman Liang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Oct 2013 00:29:39 +0100</lastBuildDate>
+    
+	<atom:link href="https://feynmanliang.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MathJax and Syntax Highlighting (with Live Preview) on Ghost</title>
+      <link>https://feynmanliang.com/post/mathjax-integration/</link>
+      <pubDate>Sun, 27 Oct 2013 00:29:39 +0100</pubDate>
+      
+      <guid>https://feynmanliang.com/post/mathjax-integration/</guid>
+      <description>MathML Support (MathJax) Thanks to Patrick Edelman for the reference!
+Adding LaTeX to Ghost is very simple. Open up ghost/content/themes/YOUR_THEME_NAME/default.hbs. Before &amp;lt;/body&amp;gt;, insert:
+{{! Mathjax configuration}} &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/x-mathjax-config&amp;#34;&amp;gt;MathJax.Hub.Config({ tex2jax: {inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]]} }); Now test it out: $\sum \frac{1}{n} = H\_n$ should yield $\sum \frac{1}{n} = H_n$.
+The configuration is not perfect, however. Action items include:
+ Overridding Markdown parsing for $...$ enclosed text. In particular, $\sum_{n=1}^\infty \frac{1}{n} = H_n$ fails to render properly because _.</description>
+    </item>
+    
+  </channel>
+</rss>
