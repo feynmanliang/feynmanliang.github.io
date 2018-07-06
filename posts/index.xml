@@ -29,9 +29,8 @@ In this post, I want to write a bit about a result known as Hilbert&amp;rsquo;s 
       <guid>https://feynmanliang.com/posts/mathjax-integration/</guid>
       <description>MathML Support (MathJax) Thanks to Patrick Edelman for the reference!
 Adding LaTeX to Ghost is very simple. Open up ghost/content/themes/YOUR_THEME_NAME/default.hbs. Before &amp;lt;/body&amp;gt;, insert:
-{{! Mathjax configuration}} &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/x-mathjax-config&amp;#34;&amp;gt;MathJax.Hub.Config({ tex2jax: {inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]]} }); Now test it out: $\sum \frac{1}{n} = H\_n$ should yield \(\sum \frac{1}{n} = H_n\).
-The configuration is not perfect, however. Action items include:
- Overridding Markdown parsing for $...$ enclosed text. In particular, $\sum_{n=1}^\infty \frac{1}{n} = H_n$ fails to render properly because _.</description>
+1 2 3 4 5 6 7  {{! Mathjax configuration}} &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/x-mathjax-config&amp;#34;&amp;gt;MathJax.Hub.Config({ tex2jax: {inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]]} });   Now test it out: $\sum \frac{1}{n} = H\_n$ should yield \(\sum \frac{1}{n} = H_n\).
+The configuration is not perfect, however. Action items include:</description>
     </item>
     
   </channel>
