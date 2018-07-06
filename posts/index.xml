@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Feynman Liang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Oct 2013 00:29:39 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 05 Jul 2018 16:24:42 -0700</lastBuildDate>
     
 	<atom:link href="https://feynmanliang.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hilbert&#39;s Basis Theorem</title>
+      <link>https://feynmanliang.com/posts/hilbert-basis-theorem/</link>
+      <pubDate>Thu, 05 Jul 2018 16:24:42 -0700</pubDate>
+      
+      <guid>https://feynmanliang.com/posts/hilbert-basis-theorem/</guid>
+      <description>Ambitious goals seem to pop up whenever I have free time, but I have a poor track record of hitting them. To fill the extra time I have over the summer, I started reading Eisenbud&amp;rsquo;s Commutative Algebra texbook as a side project. Let&amp;rsquo;s hope I get far enough to learn something useful.
+In this post, I want to write a bit about a result known as Hilbert&amp;rsquo;s Basis Theorem (HBT).</description>
+    </item>
     
     <item>
       <title>MathJax and Syntax Highlighting on Ghost</title>
