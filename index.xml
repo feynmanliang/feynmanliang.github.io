@@ -6,10 +6,21 @@
     <description>Recent content on Feynman Liang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Jul 2018 16:24:42 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jul 2018 15:04:38 -0700</lastBuildDate>
     
 	<atom:link href="https://feynmanliang.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Noetherian modules and a short exact sequence for quotients</title>
+      <link>https://feynmanliang.com/posts/noetherian-modules-and-ses-for-quotients/</link>
+      <pubDate>Sun, 29 Jul 2018 15:04:38 -0700</pubDate>
+      
+      <guid>https://feynmanliang.com/posts/noetherian-modules-and-ses-for-quotients/</guid>
+      <description>Equivalent characterizations of the Noetherian condition are plentiful (see Hilbert&amp;rsquo;s Basis Theorem for more) and using them interchangably can be a convenient and succinct way to express proofs. In this post, we explore yet another characterization of Noetherian conditions and bring attention to an important short exact sequence related to quotient constructions which helps clarify why this condition should hold.
+Claim The claim of interest is the following:
+ Let $M$ be a module and $M&amp;rsquo; \subset M$ a submodule.</description>
+    </item>
     
     <item>
       <title>Hilbert&#39;s Basis Theorem</title>

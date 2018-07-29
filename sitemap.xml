@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://feynmanliang.com/posts/noetherian-modules-and-ses-for-quotients/</loc>
+    <lastmod>2018-07-29T15:04:38-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://feynmanliang.com/posts/hilbert-basis-theorem/</loc>
     <lastmod>2018-07-05T16:24:42-07:00</lastmod>
   </url>
@@ -18,6 +23,12 @@
   </url>
   
   <url>
+    <loc>https://feynmanliang.com/tags/algebra/</loc>
+    <lastmod>2018-07-29T15:04:38-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://feynmanliang.com/tags/algebraic-geometry/</loc>
     <lastmod>2018-07-05T16:24:42-07:00</lastmod>
     <priority>0</priority>
@@ -25,7 +36,7 @@
   
   <url>
     <loc>https://feynmanliang.com/</loc>
-    <lastmod>2018-07-05T16:24:42-07:00</lastmod>
+    <lastmod>2018-07-29T15:04:38-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -35,7 +46,7 @@
   
   <url>
     <loc>https://feynmanliang.com/tags/math/</loc>
-    <lastmod>2018-07-05T16:24:42-07:00</lastmod>
+    <lastmod>2018-07-29T15:04:38-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -45,7 +56,7 @@
   
   <url>
     <loc>https://feynmanliang.com/posts/</loc>
-    <lastmod>2018-07-05T16:24:42-07:00</lastmod>
+    <lastmod>2018-07-29T15:04:38-07:00</lastmod>
   </url>
   
   <url>
@@ -56,7 +67,7 @@
   
   <url>
     <loc>https://feynmanliang.com/tags/</loc>
-    <lastmod>2018-07-05T16:24:42-07:00</lastmod>
+    <lastmod>2018-07-29T15:04:38-07:00</lastmod>
     <priority>0</priority>
   </url>
   

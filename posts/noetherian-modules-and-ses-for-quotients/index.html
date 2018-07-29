@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>
-  Hilbert&#39;s Basis Theorem &middot; Feynman Liang
+  Noetherian modules and a short exact sequence for quotients &middot; Feynman Liang
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
@@ -565,220 +565,121 @@ input[type=range]:focus::-ms-fill-upper {
       
 <article class="posts">
   <header class="post">
-     <h2 class="post-title"><a href="https://feynmanliang.com/posts/hilbert-basis-theorem/">Hilbert&#39;s Basis Theorem</a></h2> 
-     <span class="post-date">Jul 5, 2018 </span> 
+     <h2 class="post-title"><a href="https://feynmanliang.com/posts/noetherian-modules-and-ses-for-quotients/">Noetherian modules and a short exact sequence for quotients</a></h2> 
+     <span class="post-date">Jul 29, 2018 </span> 
   </header>
   <div class="post-content">
     
 
-<p>Ambitious goals seem to pop up whenever I have free time, but I have a poor track record of hitting them.
-To fill the extra time I have over the summer, I started reading
-<a href="https://www.springer.com/us/book/9780387942681">Eisenbud&rsquo;s Commutative Algebra texbook</a>
-as a side project. Let&rsquo;s hope I get far enough to learn something useful.</p>
+<p>Equivalent characterizations of the Noetherian condition
+are plentiful (see <a href="https://feynmanliang.com/posts/hilbert-basis-theorem/">Hilbert&rsquo;s Basis Theorem</a> for more)
+and using them interchangably can be a convenient and succinct way
+to express proofs. In this post, we explore yet another characterization
+of Noetherian conditions and bring attention to an important short exact sequence
+related to quotient constructions which helps clarify why this condition should hold.</p>
 
-<p>In this post, I want to write a bit about a result known as Hilbert&rsquo;s Basis Theorem (HBT). We&rsquo;ll motivate
-why we should care about it through a use case prevalent in algebraic geometry.</p>
+<h2 id="claim">Claim</h2>
 
-<h2 id="motivating-example">Motivating example</h2>
-
-<p>In algebraic geometry, one defines &ldquo;shapes&rdquo; and &ldquo;curves&rdquo; by taking a set of polynomials $S \subset k[x_1, \ldots, x_r]$
-over an algebraically closed field $k$ and studying the set of points in $k^r$ where all the
-polynomials in $S$ are equal to zero:
-$$Z(S) = \{ p \in k^r : f(p) = 0~\text{for all}~f \in S\}$$
-We call such sets <strong>algebraic sets</strong>.</p>
-
-<p>For example, if $f = x^2 + y^2 - 1 \in \mathbb{R}[x,y]$ then $Z(\{f\})$ is the algebraic set consisting
-of points where $x^2 + y^2 = 1$, which is precisely the unit circle.</p>
-
-<p>Sets of polynomials seem pretty daunting; they can easily be uncountably large.
-Hence, at first glance characterizing these algebraic sets seems like a difficult task.
-However, Hilbert&rsquo;s basis theorem gives us a a very useful result which allows us to
-restrict our attention from arbitrary subsets of $k[x_1, \ldots, x_r]$ to just
-finitely generated ideals.</p>
+<p>The claim of interest is the following:</p>
 
 <blockquote>
-<p><strong>Corollary of Hilbert&rsquo;s basis theorem</strong>: Any algebraic set can be written as $Z(I)$ where $I \subset k[x_1,
-\ldots, x_r]$ is a finitely generated ideal.</p>
+<p>Let $M$ be a module and $M&rsquo; \subset M$ a submodule.
+Then $M$ is Noetherian  if and only if $M&rsquo;$ and $M / M&rsquo;$ are both Noetherian.</p>
 </blockquote>
 
-<p>This makes the problem significantly easier: since any $f \in I$ can
-be represented using a finite basis $f = \sum_{i=1}^n k_i f_i$ we only
-need to concern ourselves with the zero locus of a finite number of polynomials!</p>
+<h2 id="intuition">Intuition</h2>
 
-<h2 id="statement-of-the-theorem">Statement of the theorem</h2>
+<p>My first intuition is that being Noetherian is a stronger finiteness condition
+(both $M$ and all of the submodules of $M$ are finitely generated), so the
+claim is saying that $M$ is &ldquo;finite&rdquo; iff &ldquo;dividing&rdquo; $M$ by a &ldquo;finite&rdquo; object
+$M&rsquo;$ is &ldquo;finite.&rdquo;</p>
 
-<p>To state the theorem in it&rsquo;s full generality, we will need the following definition.
-Let $R$ be a commutative ring.</p>
+<h2 id="a-first-attempt-at-a-proof">A first attempt at a proof</h2>
 
-<blockquote>
-<p><strong>Definition</strong>: $R$ is <strong>Noetherian</strong> if any ideal $I \subset R$ is finitely generated.</p>
-</blockquote>
+<p>The $\Rightarrow$ direction is easy: submodules of $M&rsquo;$ are also submodules of $M$
+hence finitely generated so $M&rsquo;$ is Noetherian. Also, submodules of $M / M&rsquo;$
+are of the form $N / M&rsquo;$ where $N$ is a submodule of $M$ hence finitely generated.
+Letting $N = (n_1,\ldots,n_k)$, we have that
+$$N / M&rsquo; = (n_1 + M&rsquo;, \ldots, n_k + M&rsquo;)$$
+is finitely generated as well so $M / M&rsquo;$ is Noetherian.</p>
 
-<p>An equivalent definition is the <strong>ascending chain condition</strong>: for any ascending chain of ideals of $R$
-$$I_1 \subset I_2 \subset \cdots \subset I_k \subset I_{k+1} \subset \cdots$$
-there exists a $n$ after which
-$$I_n = I_{n+1} = I_{n+2} = \cdots$$</p>
+<p>The $\Leftarrow$ direction was less obvious to me. We need to show that any submodule
+$N \subset M$ is finitely generated, but the conditions are only on a particular
+submodule $M&rsquo;$. Following intuition, one might proceed along an argument that the cosets</p>
 
-<p>Hilbert&rsquo;s basis theorem says that adjoining elements to a Noetherian ring preserves the Noetherian property.</p>
+<p>$$\{n + M&rsquo; : n \in N \}$$</p>
 
-<blockquote>
-<p><strong>Theorem (Hilbert&rsquo;s basis theorem)</strong>: If $R$ is Noetherian, then so is $R[x]$.</p>
-</blockquote>
+<p>partition $N$, so using the fact that $M&rsquo;$ is finitely generated and $N / M&rsquo;$
+is a submodule of Noetherian $M / M&rsquo;$ hence also finitely generated we have that
+$N$ is partitioned by taking a finitely generated coset $M&rsquo;$ and applying
+a finitely generated set of translations $M&rsquo; \mapsto n + M&rsquo;$ to it. The generators
+of the translations combbined with the generators of $m&rsquo;$ <em>should</em> give the generators
+of $N$.</p>
 
-<h2 id="consequences">Consequences</h2>
+<h3 id="where-intuition-breaks-down">Where intuition breaks down</h3>
 
-<p>By induction, we get that:</p>
+<p>What I just wrote isn&rsquo;t quite true. The careful reader might note that
+$n + M&rsquo;$ may not be contained in $N$ (e.g. when $M&rsquo; \not\subset N$).
+This means that</p>
 
-<blockquote>
-<p><strong>Corollary</strong>: If $R$ is Noetherian, then so is $R[x_1, \ldots, x_r]$.</p>
-</blockquote>
+<ol>
+<li>The proposed &ldquo;partition&rdquo; of $N$ might strictly contain $N$ (so actually it&rsquo;s a disjoint covering)</li>
+<li>If $M&rsquo; \not\subset N$ is not a submodule, then $N / M&rsquo;$ doesn&rsquo;t make any sense!</li>
+</ol>
 
-<p>Noting that the only ideals of a field $k$ are $\{0\} = \langle 0 \rangle$
-and $k = \langle 1 \rangle$ (if $a \in I$ is non-zero, then since $a^{-1} \in
-k$ because $I$ is an ideal we must have $a^{-1} a = 1 \in I$, hence $I \supset
-\langle 1 \rangle = k$). As both of these are finitely generated:</p>
+<h2 id="fixing-the-problem-and-the-short-exact-sequence-for-closures">Fixing the problem and the short exact sequence for closures</h2>
 
-<blockquote>
-<p><strong>Lemma</strong>: Any field $k$ is Noetherian</p>
-</blockquote>
+<p>Both of these problems have to do with $M&rsquo;$ not being a submodule of $N$.
+To fix that, let&rsquo;s consider $N \cap M&rsquo;$ which we know to both be a submodule
+of $N$. Since we can both include it into $N$ and use it to form a quotient of $N$,
+we have the following short exact sequence</p>
 
-<p>Together with Hilbert&rsquo;s basis theorem and the above corollary, we have</p>
+<p>$$0 \to N \cap M&rsquo; \to N \to N / (N \cap M&rsquo;) \to 0$$</p>
 
-<blockquote>
-<p><strong>Corollary</strong>: $k[x_1, \ldots, x_r]$ is Noetherian; all of its ideals are finitely generated.</p>
-</blockquote>
+<p>Although we&rsquo;re working with modules here, the same sequence oftentimes shows up
+when working with quotients other settings (e.g. $M$ a group and $N
+\trianglelefteq M$ a normal subgroup, $M$ a topological space and $N \subset M$
+a subspace with the subset topology). I&rsquo;ve found it worthwhile to commit this thing to memory.</p>
 
-<p>Our discussion up until now has focused only on ideals, whereas the motivating example
-was about algebraic sets defined by arbitrary subsets of $k[x_1, \ldots, x_r]$.
-The following proposition ties the two together.</p>
+<p>With this sequence, the finiteness structure becomes strikingly obvious.
+Notice $N \cap M&rsquo; \subset M&rsquo;$ so it&rsquo;s finitely generated. Furthermore,
+$N / (N \cap M&rsquo;) \simeq (N + M&rsquo;) / M&rsquo;$ (by the second isomorphism theorem) which
+is a submodule of $M / M&rsquo;$, so it&rsquo;s finitely generated as well. We need to show $N$ is
+finitely generated to finish the proof, and the sequence makes it obvious
+is that $N$ is sandwiched between two finitely generated objects</p>
 
-<blockquote>
-<p><strong>Proposition</strong>: For any $S \subset R[x_1, \ldots, x_r]$, $Z(S) = Z(\langle S \rangle)$
-where $\langle S \rangle$ is the ideal generated by $S$.</p>
-</blockquote>
+<p>$$0 \to \underbrace{N \cap M&rsquo;}_{\text{fin. gen.}} \to N \to \underbrace{N / (N \cap M&rsquo;)}_{\text{fin. gen.}} \to 0$$</p>
 
-<p><strong>Proof</strong>: Since $S \subset \langle S \rangle$, $Z(S) \supset Z(\langle S \rangle)$
-(aside: $Z$ is a contravariant functor from the category consisting subsets of $R[x_1, \ldots, x_r]$
-to the category consisting of algebraic sets on $R^r$, both with inclusions as arrows).</p>
-
-<p>Conversely, if $p \in Z(S)$ then evaluating any $f = \sum_i r_i f_i
-\in \langle S \rangle$ at $p$ yields $$f(p) = \sum_i r_i f_i(p) = \sum_i r_i 0
-= 0$$ since the $f_i \in S$ are equal to zero for $p \in S$. $\square$</p>
-
-<h3 id="proof-of-corollary-in-motivating-example">Proof of corollary in motivating example</h3>
-
-<p>Armed with these result, the proof of the corollary in the motivating example is swift.</p>
-
-<p><strong>Proof</strong>: An algebraic set is of the form $Z(S)$
-where $S \subset k[x_1, \ldots, x_r]$. By the previous proposition, $Z(S) = Z(I)$
-where $I = \langle S \rangle) \subset k[x_1, \ldots, x_r]$ is an ideal.
-By the above corollary, $k[x_1, \ldots, x_r]$ is Noetherian hence $I$ must be finitely generated. $\square$</p>
-
-<h2 id="proving-hilbert-s-basis-theorem">Proving Hilbert&rsquo;s basis theorem</h2>
-
-<p>We&rsquo;ve almost tied up all the loose ends in this discussion; all that remains is proving Hilbert&rsquo;s basis
-theorem itself. In this section, we will complete this last step.</p>
-
-<p>Before we get there, we will need an alternate characterization of Noetherian rings.</p>
-
-<p><strong>Lemma</strong>: $R$ is Noetherian $\iff$ $R$ satisfies the <strong>ascending chain condition</strong>: for any ascending chain of ideals
-$$I_1 \subset I_2 \subset I_3 \subset \cdots$$
-there exists $n \in \mathbb{N}$ after which the chain stabilizes, i.e.
-$$I_n = I_{n+1} = \cdots$$</p>
-
-<p><strong>Proof</strong>: Since $I = \cup_i I_i$ is an ideal of $R$, it has a finite set of generators $\{a_i\}_{i=1}^k$.
-Each $a_i \in I_{j_{i}}$ for some $j_{i} \in \mathbb{N}$, so taking $n = \max_{1 \leq i \leq k} j_i$ suffices.</p>
-
-<p>Conversely, define the ascending chain $I_k = \langle a_i \rangle_{i=1}^k$ where
-$a_0 \in I$ and $a_i \in I \setminus I_{i-1}$ are chosen arbitrarily. This chain
-stabilizes at some $n$ where $I = I_n = \langle a_i \rangle_{i=1}^k$. $\square$</p>
-
-<p><strong>Proof of Hilbert&rsquo;s basis theorem</strong>: Let $I \subset R[x]$ be an ideal.
-We will construct a finite set of generators inductively.
-Choose $f_0 \in I$ to be any element with least degree and for $i \geq 1$ pick
-$f_i \in I \setminus \langle f_k \rangle_{k=1}^{i-1}$ any element with least degree.
-It remains to show that $R[x] = \langle f_k \rangle_{k=1}^{i}$ for some $i \in \mathbb{N}$.
-For each $f_i$, we can write</p>
-
-<p>$$f_i = \sum_{j=0}^{\deg f_i} a_{i,j} x^{j}$$</p>
-
-<p>Consider the ascending chain of ideals $J_k = (a_{i, \deg f_i})_{i=1}^k$ generated by all the initial coefficients
-of the selected $f_i$. This is an ascending chain, so $J = \langle a_i \rangle_{i=1}^m$ for some $m$. We claim
-that $I = \langle f_i \rangle_{i=1}^m$.</p>
-
-<p>To see this, let $f_{m+1} \in I \setminus \langle f_k \rangle_{k=1}^{i-1}$. Then since $a_{m+1,\deg f_{m+1}} \in J$,
-we have</p>
-
-<p>$$a_{m+1,\deg f_{m+1}} = \sum_{j=1}^m r_j a_{j,\deg f_j}$$</p>
-
-<p>for some coefficients $r_j \in R$. Since $\deg f_{m+1} \geq \deg f_m \geq \deg f_{m-1} \geq \cdots$
-by how we chose these elements, we have that $\deg f_{m+1} - \deg f_j \geq 0$ and therefore can define</p>
-
-<p>$$g = \sum_{j=1}^m \underbrace{u_j x^{\deg f_{m+1} - \deg f_j}}_{\in R[x]} f_j$$</p>
-
-<p>By the definition of ideals, $g \in \langle f_k \rangle_{k=1}^{m}$.
-Now notice $f_{m+1} - g \in I$ (as the sum of two elements in $I$) but
-$f_{m+1} - g \not\in \langle f_k \rangle_{k=1}^{m}$ (otherwise adding $g$
-would give that $f_{m+1} \in \langle f_k \rangle_{k=1}^{m}$),
-so $f_{m+1} - g \in I \setminus \langle f_k \rangle_{k=1}^{m}$</p>
-
-<p>What&rsquo;s more, the initial coefficient of $g$ is given by (notation following
-<a href="https://www.pearson.com/us/higher-education/program/Sedgewick-Introduction-to-the-Analysis-of-Algorithms-An-2nd-Edition/PGM152286.html">Sedgewick and Flajolet</a>)</p>
-
-<p>$$[z^{\deg g}] g
-= [z^{\deg f_{m+1}}] g
-= \sum_{j=1}^m u_j [z^{\deg f_{m+1}}] \sum_{k=1}^{\deg f_j} a_{j,k} x^{\deg f_{m+1} - \deg f_j + k}
-= \sum_{j=1}^m u_j a_{j,\deg f_j}
-= a_{m+1,\deg f_{m+1}}$$</p>
-
-<p>Since the degree and initial coefficients of $f_{m+1}$ and $g$ match,
-we have that $\deg(f_{m+1} - g) &lt; \deg f_{m+1}$, contradicting the choice of
-$f_{m+1}$ having minimal degree amongst all polynomials in $I \setminus \langle f_k \rangle_{k=1}^{m}$.
-$\square$</p>
-
-<h2 id="closing-remarks">Closing remarks</h2>
-
-<p>Our proof of Hilbert&rsquo;s basis theorem is almost identical to that in Eisenbud with some additional commentary and
-explanation. The technique of matching the initial term between two polynomials and arguing
-that the degree of the difference is strictly less is a common proof method when working with polynomials.</p>
-
-<p>Most of our work was possible when polynomial coefficients were over a ring $R$. We only needed coefficients
-to be from a field $k$ so that we could use $k$ being Noetherian to conclude the motivating example.</p>
-
-<p>While we only showed that $Z(S) = Z(\langle S \rangle)$ for any subset $S \subset k[x_1, \ldots, x_r]$, the
-connection between algebraic sets (our geometric objects) and ideals (our algebraic objects) is much deeper.
-In fact, it&rsquo;s not terribly hard to show that $Z(I(X)) = \overline{X}$ for any $X \subset k^r$, where
-$I(X) = \{f \in k[x_1, \ldots, x_r] : f(p) = 0~\text{for all}~p \in X\}$ (exercise: prove this is an ideal)
-and $\overline{X}$ is the smallest algebraic set containing $X$ (i.e. the closure of $X$ under the
-<a href="https://en.wikipedia.org/wiki/Zariski_topology">Zariski topology</a>).</p>
-
-<p>Here, one may be tempted to conclude that algebraic sets of $k^r$ and ideals of
-$k[x_1, \ldots, x_r]$ are in correspondence, but this is false. The precise
-statement here is Hilbert&rsquo;s Nullstellensatz (which we will likely have more to say about later):</p>
-
-<blockquote>
-<p>The correspondence $I \mapsto Z(I)$ and $X \mapsto I(X)$ induces a bijection between
-the algebraic sets of $k^r$ and the <strong>radical ideals</strong> of $k[x_1, \ldots, x_r]$.</p>
-</blockquote>
+<p>The earlier attempt to make the intuition rigorous can now be cleanly argued:
+Let $N \cap M&rsquo; = (a_1, \ldots, a_r)$ (the finite generators of each coset)
+and $N / (N \cap M&rsquo;) = (\bar{b_1}, \ldots, \bar{b_s})$ (the finite generators of the translations).
+Then $N = (a_1, \ldots, a_r, b_1, \ldots, b_s)$.</p>
 
   </div>
   <footer>
     <div class="pagination">
-       <a class="btn previous " href="https://feynmanliang.com/posts/mathjax-integration/"> Prev</a> 
-       <a class="btn next " href="https://feynmanliang.com/posts/noetherian-modules-and-ses-for-quotients/"> Next</a> 
+       <a class="btn previous " href="https://feynmanliang.com/posts/hilbert-basis-theorem/"> Prev</a> 
+      
     </div>
   </footer>
 </article>
 
 
 
+<h3>See Also</h3>
+<ul>
+	
+	<li><a href="/posts/hilbert-basis-theorem/">Hilbert&#39;s Basis Theorem</a></li>
+	
+</ul>
+
 
 
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
-  this.page.url = "https://feynmanliang.com/posts/hilbert-basis-theorem/";  
-  this.page.identifier = "a4fe5cc4fb5b7e13b39b9d079278c993"; 
+  this.page.url = "https://feynmanliang.com/posts/noetherian-modules-and-ses-for-quotients/";  
+  this.page.identifier = "6cc82315945dec303cd315d79f37a54d"; 
 };
 (function() { 
 var d = document, s = d.createElement('script');
